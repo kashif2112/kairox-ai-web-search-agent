@@ -1,0 +1,7 @@
+deepagents
+langchain-mcp-adapters
+langchain-nvidia-ai-endpoints
+python-dotenv
+streamlit>=1.34
+# Optional, enable Deep Research (built-in tool):
+# tavily-python
