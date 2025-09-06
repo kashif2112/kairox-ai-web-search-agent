@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kairox-ai-web-search-agent"
+version = "0.1.0"
+description = "Kairox.ai DeepAgent with Firecrawl MCP tools"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Proprietary"}
+authors = [{ name = "Kairox.ai" }]
+dependencies = [
+  "deepagents",
+  "langchain-mcp-adapters",
+  "langchain-nvidia-ai-endpoints",
+  "python-dotenv",
+  "streamlit>=1.34",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest",
+  "ruff",
+  "mypy",
+  "types-python-dotenv",
+]
+
+[project.urls]
+Homepage = "https://example.com"
+
+[project.scripts]
+kairox-agent = "kairox_ai_web_search_agent.cli:main"
+kairox-agent-ui = "kairox_ai_web_search_agent.ui_streamlit:main"
+kairox-agent-ui-chat = "kairox_ai_web_search_agent.ui_chatgpt:app"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["tests*"]
